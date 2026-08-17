@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Slot — Eclipse</title>
+  <meta name="description" content="Book an EV charging slot — Eclipse" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="booking.css" />
+</head>
+<body class="inner-page">
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__inner">
+      <div class="nav__left">
+        <button class="nav__btn" id="aboutBtn">ABOUT ▾</button>
+        <div class="nav__drop" id="aboutDrop">
+          <a href="index.html">Home</a>
+          <a href="stations.html">Stations</a>
+          <a href="booking.html">Booking</a>
+          <a href="bookings.html">My Bookings</a>
+        </div>
+      </div>
+
+      <a href="index.html" class="nav__logo" aria-label="Eclipse Home">
+        <!-- Eclipse Logo SVG -->
+        <svg width="148.4" height="16" viewBox="0 0 1344 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M193.189 28.5047L200.076 0H54.9142C40.7075 0 26.3636 11.7106 22.8712 26.1591L0.770964 117.638C-2.71855 132.086 5.96666 143.797 20.1705 143.797H165.333L172.22 115.292H56.7404C52.0048 115.292 49.1098 111.388 50.2729 106.572L55.2057 86.1507H179.256L186.144 57.646H62.0961L67.0289 37.2244C68.1921 32.4082 72.9734 28.5047 77.7089 28.5047H193.186H193.189Z" fill="currentColor"/>
+          <path d="M383.017 28.5047L389.904 0H244.742C230.538 0 216.195 11.7106 212.702 26.1591L190.599 117.638C187.11 132.086 195.795 143.797 209.999 143.797H355.161L362.048 115.292H246.571C241.836 115.292 238.941 111.388 240.104 106.572L256.86 37.2244C258.023 32.4082 262.804 28.5047 267.54 28.5047H383.017Z" fill="currentColor"/>
+          <path d="M431.977 106.572L457.727 0H410.897L382.475 117.638C378.986 132.086 387.671 143.797 401.875 143.797H547.037L553.924 115.292H438.447C433.712 115.292 430.817 111.388 431.98 106.572H431.977Z" fill="currentColor"/>
+          <path d="M764.962 28.5047L771.85 0H600.966L594.079 28.5047H647.53C652.266 28.5047 655.161 32.4082 653.998 37.2244L637.242 106.572C636.079 111.388 631.297 115.292 626.562 115.292H573.11L566.223 143.797H737.106L743.994 115.292H690.542C685.806 115.292 682.911 111.388 684.075 106.572L700.83 37.2244C701.994 32.4082 706.775 28.5047 711.511 28.5047H764.962Z" fill="currentColor"/>
+          <path d="M839.07 0H817.961C803.757 0 789.411 11.7106 785.921 26.1591L757.499 143.797H804.329L818.255 86.1507H916.585C930.792 86.1507 945.136 74.4401 948.628 59.9916L956.802 26.1591C960.294 11.7106 951.606 0 937.402 0H839.073H839.07ZM894.03 57.646H825.14L832.182 28.5047H901.072C905.808 28.5047 908.703 32.4082 907.54 37.2244L904.713 48.9263C903.55 53.7425 898.769 57.646 894.033 57.646H894.03Z" fill="currentColor"/>
+          <path d="M1092.49 143.797H947.327L954.215 115.292H1069.48C1074.22 115.292 1079 111.388 1080.16 106.572L1082.99 94.8704C1084.15 90.0542 1081.25 86.1507 1076.52 86.1507H986.975C972.768 86.1507 964.083 74.4401 967.576 59.9916L975.749 26.1591C979.239 11.7106 993.585 0 1007.79 0H1152.95L1146.06 28.5047H1030.58C1025.85 28.5047 1021.07 32.4082 1019.9 37.2244L1017.08 48.9263C1015.91 53.7425 1018.81 57.646 1023.54 57.646H1113.3C1127.51 57.646 1136.19 69.3565 1132.7 83.8051L1124.53 117.638C1121.04 132.086 1106.69 143.797 1092.48 143.797H1092.49Z" fill="currentColor"/>
+          <path d="M1337.11 28.5047L1344 0H1198.84C1184.63 0 1170.29 11.7106 1166.79 26.1591L1144.69 117.638C1141.2 132.086 1149.89 143.797 1164.09 143.797H1309.25L1316.14 115.292H1200.66C1195.93 115.292 1193.03 111.388 1194.2 106.572L1199.13 86.1507H1323.18L1330.07 57.646H1206.02L1210.95 37.2244C1212.11 32.4082 1216.89 28.5047 1221.63 28.5047H1337.11H1337.11Z" fill="currentColor"/>
+        </svg>
+      </a>
+
+      <div class="nav__right">
+        <a href="bookings.html" class="nav__icon-link">MY BOOKINGS</a>
+        <a href="index.html" class="btn-login">HOME</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="booking-page">
+
+    <div class="breadcrumb" id="breadcrumbNav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+      <a href="stations.html" id="backToStationLink" style="font-family: var(--font-display, 'Oswald', sans-serif); text-transform: uppercase; font-size: 14px; text-decoration: none; color: var(--black); font-weight: 500;">&larr; BACK TO STATION</a>
+      <span style="font-family: var(--font-display, 'Oswald', sans-serif); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle);">STEP 01 / 02</span>
+    </div>
+
+    <!-- ERROR STATE -->
+    <section class="state-error" id="errorState" style="display:none;">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,100,100,0.5)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 8v4M12 16h.01"/>
+      </svg>
+      <h2 class="state-error__title">Unable to load booking details</h2>
+      <p class="state-error__text">Please select a station to continue booking.</p>
+      <a href="stations.html" class="state-error__btn">Find a Station</a>
+    </section>
+
+    <!-- CONTENT WRAPPER -->
+    <div id="contentWrapper" style="display:none;">
+
+      <!-- STATION SUMMARY HEADER per Section 20 -->
+      <section class="booking-header" style="margin-bottom: 32px; border-bottom: 2px solid var(--black); padding-bottom: 24px;">
+        <h1 class="booking-header__title" style="font-family: 'Oswald', sans-serif; font-size: 36px; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 8px;">BOOK YOUR CHARGING SLOT</h1>
+        <div class="booking-header__station" id="stationInfo">
+          <h2 id="stName" style="font-family: 'Oswald', sans-serif; font-size: 24px; text-transform: uppercase; margin-bottom: 4px;">Station Name</h2>
+          <p id="stAddress" style="color: var(--text-subtle); font-size: 15px;">Location details</p>
+        </div>
+      </section>
+
+      <div class="booking-layout">
+        
+        <!-- LEFT: Slot Selection -->
+        <div class="booking-form-panel">
+          
+          <div class="form-section">
+            <label class="form-label" for="bookingDate" style="font-family: 'Oswald', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500;">SELECT DATE</label>
+            <input type="date" class="form-input" id="bookingDate" style="font-family: var(--font-body, 'Inter', sans-serif); padding: 12px 16px; border: 2px solid var(--black); border-radius: 8px; width: 100%; margin-top: 8px;" />
+          </div>
+
+          <!-- Loader for slots -->
+          <div id="slotsLoader" class="loader-inline" style="display:none;">
+            <div class="loader-spinner"></div>
+            <p>Checking availability...</p>
+          </div>
+
+          <div id="chargersContainer" style="display:none; margin-top: 24px;">
+            <!-- Generated dynamically -->
+          </div>
+
+        </div>
+
+        <!-- RIGHT: Vehicle Info & Submit -->
+        <div class="booking-summary-panel">
+          <div class="form-card" style="border: 2px solid var(--black); border-radius: 16px; padding: 24px; background: var(--white);">
+            <h3 class="form-card__title" style="font-family: 'Oswald', sans-serif; font-size: 20px; text-transform: uppercase; border-bottom: 2px solid var(--black); padding-bottom: 12px; margin-bottom: 20px;">BOOKING SUMMARY</h3>
+            
+            <div class="summary-details" style="margin-bottom: 20px;">
+              <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <span style="font-size: 13px; text-transform: uppercase; font-family: 'Oswald', sans-serif; color: var(--text-subtle);">Date</span>
+                <strong id="sumDate" style="font-size: 14px;">—</strong>
+              </div>
+              <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <span style="font-size: 13px; text-transform: uppercase; font-family: 'Oswald', sans-serif; color: var(--text-subtle);">Time Slot</span>
+                <strong id="sumTime" style="font-size: 14px;">—</strong>
+              </div>
+              <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <span style="font-size: 13px; text-transform: uppercase; font-family: 'Oswald', sans-serif; color: var(--text-subtle);">Charger</span>
+                <strong id="sumCharger" style="font-size: 14px;">—</strong>
+              </div>
+            </div>
+
+            <hr class="form-divider" style="border: none; border-top: 1px solid #e0e0e0; margin: 16px 0;" />
+
+            <div class="form-group" style="margin-bottom: 16px;">
+              <label class="form-label" for="vehicleModel" style="font-family: 'Oswald', sans-serif; font-size: 12px; text-transform: uppercase; display: block; margin-bottom: 6px;">Vehicle Model</label>
+              <input type="text" class="form-input" id="vehicleModel" placeholder="e.g. Tata Nexon EV" style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--black); border-radius: 8px;" />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label class="form-label" for="vehicleNumber" style="font-family: 'Oswald', sans-serif; font-size: 12px; text-transform: uppercase; display: block; margin-bottom: 6px;">Registration Number</label>
+              <input type="text" class="form-input" id="vehicleNumber" placeholder="e.g. MH 01 AB 1234" style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--black); border-radius: 8px;" />
+            </div>
+
+            <div id="formError" class="form-alert form-alert--error" style="display:none; color: #d32f2f; margin-bottom: 16px; font-size: 13px;"></div>
+            <div id="formSuccess" class="form-alert form-alert--success" style="display:none; color: #2e7d32; margin-bottom: 16px; font-size: 13px;"></div>
+
+            <button class="btn-submit" id="btnSubmit" disabled style="width: 100%; padding: 14px; background: var(--black); color: var(--white); border: none; border-radius: 50px; font-family: 'Oswald', sans-serif; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; transition: background 0.2s;">CONFIRM BOOKING &rarr;</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="successModal" style="display:none;">
+    <div class="modal">
+      <div class="modal__icon" style="text-align: center; margin-bottom: 12px;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h2 class="modal__title" style="text-transform: uppercase; font-family: 'Oswald', sans-serif; letter-spacing: 0.05em; margin-bottom: 4px;">BOOKING CONFIRMED</h2>
+      <p class="modal__text" style="color: var(--text-subtle); margin-bottom: 16px;">You're all set.</p>
+      
+      <div class="qr-pass">
+        <div class="qr-pass__inner">
+          <div class="qr-pass__scanline"></div>
+          <img id="qrCodeImg" src="" alt="Booking QR Code" />
+        </div>
+        <p id="bookingIdText" style="font-family: 'Oswald', sans-serif; letter-spacing: 0.05em; font-weight: 500; font-size: 14px; margin-top: 8px;"></p>
+      </div>
+
+      <div class="modal__actions" style="margin-top: 24px; gap: 10px;">
+        <a href="bookings.html" class="modal__btn modal__btn--primary" style="border-radius: 50px;">VIEW MY BOOKINGS</a>
+        <a href="stations.html" class="modal__btn modal__btn--secondary" style="border-radius: 50px;">BACK TO STATIONS</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="booking.js"></script>
+</body>
+</html>

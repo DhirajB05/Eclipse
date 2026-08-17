@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eclipse — Charge Your Electric Life</title>
+  <meta name="description" content="Eclipse EV — Charge Your Electric Life." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700;900&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Sora:wght@600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__inner">
+      <div class="nav__left">
+        <button class="nav__btn" id="aboutBtn">ABOUT ▾</button>
+        <div class="nav__drop" id="aboutDrop">
+          <a href="#">Our Story</a>
+          <a href="#">Technology</a>
+          <a href="#">Sustainability</a>
+          <a href="#">Careers</a>
+        </div>
+      </div>
+
+      <a href="#" class="nav__logo" aria-label="Eclipse Home">
+        <svg width="148.4" height="16" viewBox="0 0 1344 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M193.189 28.5047L200.076 0H54.9142C40.7075 0 26.3636 11.7106 22.8712 26.1591L0.770964 117.638C-2.71855 132.086 5.96666 143.797 20.1705 143.797H165.333L172.22 115.292H56.7404C52.0048 115.292 49.1098 111.388 50.2729 106.572L55.2057 86.1507H179.256L186.144 57.646H62.0961L67.0289 37.2244C68.1921 32.4082 72.9734 28.5047 77.7089 28.5047H193.186H193.189Z" fill="currentColor"/>
+          <path d="M383.017 28.5047L389.904 0H244.742C230.538 0 216.195 11.7106 212.702 26.1591L190.599 117.638C187.11 132.086 195.795 143.797 209.999 143.797H355.161L362.048 115.292H246.571C241.836 115.292 238.941 111.388 240.104 106.572L256.86 37.2244C258.023 32.4082 262.804 28.5047 267.54 28.5047H383.017Z" fill="currentColor"/>
+          <path d="M431.977 106.572L457.727 0H410.897L382.475 117.638C378.986 132.086 387.671 143.797 401.875 143.797H547.037L553.924 115.292H438.447C433.712 115.292 430.817 111.388 431.98 106.572H431.977Z" fill="currentColor"/>
+          <path d="M764.962 28.5047L771.85 0H600.966L594.079 28.5047H647.53C652.266 28.5047 655.161 32.4082 653.998 37.2244L637.242 106.572C636.079 111.388 631.297 115.292 626.562 115.292H573.11L566.223 143.797H737.106L743.994 115.292H690.542C685.806 115.292 682.911 111.388 684.075 106.572L700.83 37.2244C701.994 32.4082 706.775 28.5047 711.511 28.5047H764.962Z" fill="currentColor"/>
+          <path d="M839.07 0H817.961C803.757 0 789.411 11.7106 785.921 26.1591L757.499 143.797H804.329L818.255 86.1507H916.585C930.792 86.1507 945.136 74.4401 948.628 59.9916L956.802 26.1591C960.294 11.7106 951.606 0 937.402 0H839.073H839.07ZM894.03 57.646H825.14L832.182 28.5047H901.072C905.808 28.5047 908.703 32.4082 907.54 37.2244L904.713 48.9263C903.55 53.7425 898.769 57.646 894.033 57.646H894.03Z" fill="currentColor"/>
+          <path d="M1092.49 143.797H947.327L954.215 115.292H1069.48C1074.22 115.292 1079 111.388 1080.16 106.572L1082.99 94.8704C1084.15 90.0542 1081.25 86.1507 1076.52 86.1507H986.975C972.768 86.1507 964.083 74.4401 967.576 59.9916L975.749 26.1591C979.239 11.7106 993.585 0 1007.79 0H1152.95L1146.06 28.5047H1030.58C1025.85 28.5047 1021.07 32.4082 1019.9 37.2244L1017.08 48.9263C1015.91 53.7425 1018.81 57.646 1023.54 57.646H1113.3C1127.51 57.646 1136.19 69.3565 1132.7 83.8051L1124.53 117.638C1121.04 132.086 1106.69 143.797 1092.48 143.797H1092.49Z" fill="currentColor"/>
+          <path d="M1337.11 28.5047L1344 0H1198.84C1184.63 0 1170.29 11.7106 1166.79 26.1591L1144.69 117.638C1141.2 132.086 1149.89 143.797 1164.09 143.797H1309.25L1316.14 115.292H1200.66C1195.93 115.292 1193.03 111.388 1194.2 106.572L1199.13 86.1507H1323.18L1330.07 57.646H1206.02L1210.95 37.2244C1212.11 32.4082 1216.89 28.5047 1221.63 28.5047H1337.11H1337.11Z" fill="currentColor"/>
+        </svg>
+      </a>
+
+      <div class="nav__right">
+        <a href="#" class="nav__icon" aria-label="Instagram">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" class="nav__icon" aria-label="YouTube">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+        </a>
+        <a href="#" class="nav__icon" aria-label="Discord">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.1.246.198.373.292a.077.077 0 0 1-.006.127c-.598.349-1.22.645-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        </a>
+        <a href="#" class="nav__icon" aria-label="X">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="btn-login">LOG IN</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT OVERLAY -->
+  <main class="page">
+
+    <!-- HERO (Background contains illustration, search bar layered below text) -->
+    <section class="hero">
+      <div class="hero__search-container">
+        <input type="text" class="hero__search-input" placeholder="Find your next charge" aria-label="Find your next charge" />
+        <button class="hero__search-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker">
+      <div class="ticker__inner">
+        <span class="ticker__item"><b>CHARGE</b> <span class="ticker__your">YOUR</span> ELECTRIC</span>
+        <span class="ticker__divider"></span>
+        <span class="ticker__item"><b>POWERED BY</b> ECLIPSE</span>
+        <span class="ticker__divider"></span>
+        <span class="ticker__item"><b>CHARGE</b> <span class="ticker__your">YOUR</span> ELECTRIC</span>
+        <span class="ticker__divider"></span>
+        <span class="ticker__item"><b>POWERED BY</b> ECLIPSE</span>
+        <span class="ticker__divider"></span>
+        <span class="ticker__item"><b>CHARGE</b> <span class="ticker__your">YOUR</span> ELECTRIC</span>
+        <span class="ticker__divider"></span>
+        <span class="ticker__item"><b>POWERED BY</b> ECLIPSE</span>
+        <span class="ticker__divider"></span>
+        <!-- duplicate for seamless loop -->
+        <span class="ticker__item"><b>CHARGE</b> <span class="ticker__your">YOUR</span> ELECTRIC</span>
+        <span class="ticker__divider"></span>
+        <span class="ticker__item"><b>POWERED BY</b> ECLIPSE</span>
+        <span class="ticker__divider"></span>
+        <span class="ticker__item"><b>CHARGE</b> <span class="ticker__your">YOUR</span> ELECTRIC</span>
+        <span class="ticker__divider"></span>
+        <span class="ticker__item"><b>POWERED BY</b> ECLIPSE</span>
+        <span class="ticker__divider"></span>
+      </div>
+    </div>
+
+    <!-- COMMUNITY -->
+    <section class="community">
+      <p class="community__eyebrow">ECLIPSE EVERYTHING</p>
+      <h2 class="community__h2">
+        JOIN THE<br>
+        <span class="community__green">ECLIPSE</span><br>
+        COMMUNITY
+      </h2>
+      <div class="community__icons">
+        <a href="#" class="comm-icon" aria-label="X">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="comm-icon" aria-label="Discord">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.1.246.198.373.292a.077.077 0 0 1-.006.127c-.598.349-1.22.645-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__cols">
+          <div class="footer__col">
+            <a href="#">BLOG</a>
+            <a href="#">CONTACT</a>
+            <a href="#">TERMS</a>
+            <a href="#">PRIVACY POLICY</a>
+            <a href="#">COOKIE POLICY</a>
+          </div>
+          <div class="footer__col">
+            <a href="#">WHY ECLIPSE?</a>
+            <a href="#">CAREERS</a>
+            <a href="#">HARDWARE</a>
+            <a href="#">DEVELOPERS</a>
+            <a href="#">GRANT PROGRAM</a>
+            <a href="#">ECOSYSTEM</a>
+          </div>
+        </div>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
+          <a href="#" aria-label="Discord"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.1.246.198.373.292a.077.077 0 0 1-.006.127c-.598.349-1.22.645-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></a>
+          <a href="#" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__wordmark">ECLIPSE</div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

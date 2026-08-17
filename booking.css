@@ -1,0 +1,409 @@
+/* ── BOOKING (WHITE EDITORIAL) ── */
+
+.booking-page {
+  padding: 0 0 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.page-header {
+  padding: 80px 24px 40px;
+  border-bottom: 2px solid var(--black);
+  margin-bottom: 40px;
+  background: var(--bg-color);
+}
+
+.page-header__title {
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: clamp(40px, 8vw, 80px);
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: var(--black);
+  letter-spacing: -0.02em;
+}
+
+.page-header__subtitle {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 16px;
+}
+
+/* LAYOUT */
+.booking-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0;
+  border-bottom: 2px solid var(--black);
+}
+
+.booking-left {
+  border-right: 2px solid var(--black);
+  padding: 0 24px 40px;
+}
+
+.booking-right {
+  padding: 0 24px 40px;
+  background: var(--surface-2);
+}
+
+@media (max-width: 992px) {
+  .booking-grid { grid-template-columns: 1fr; }
+  .booking-left { border-right: none; }
+}
+
+/* FORM SECTIONS */
+.form-section {
+  margin-bottom: 60px;
+}
+
+.form-section__header {
+  border-bottom: 2px solid var(--black);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.form-section__title {
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 32px;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.form-section__desc {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* INPUTS */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  color: var(--black);
+}
+
+.form-input {
+  width: 100%;
+  padding: 16px;
+  background: var(--white);
+  border: 2px solid var(--black);
+  font: 500 16px/1.5 var(--font);
+  color: var(--black);
+  outline: none;
+  transition: all 0.2s;
+  border-radius: 16px;
+}
+
+.form-input:focus {
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0 var(--green);
+}
+
+input[type="date"].form-input {
+  appearance: none;
+}
+
+/* CHARGER SELECTION */
+.charger-block {
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.charger-block__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 8px;
+}
+
+.charger-block__title {
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.charger-block__specs {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 8px;
+}
+
+.slot-btn {
+  background: var(--surface-2);
+  border: 2px solid var(--black);
+  padding: 12px 8px;
+  text-align: center;
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 14px;
+  color: var(--black);
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+
+.slot-btn:hover:not(:disabled) {
+  background: var(--black);
+  color: var(--green);
+}
+
+.slot-btn.selected {
+  background: var(--green);
+  color: var(--black);
+  box-shadow: 2px 2px 0 var(--black);
+  transform: translate(-2px, -2px);
+}
+
+.slot-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background: #e0e0e0;
+  border-color: #ccc;
+}
+
+/* SUMMARY PANEL */
+.booking-summary {
+  position: sticky;
+  top: 100px;
+}
+
+.summary-card {
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 8px 8px 0 var(--black);
+}
+
+.summary-card__title {
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 32px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--black);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.form-divider {
+  border: none;
+  border-top: 2px solid var(--black);
+  margin: 32px 0;
+}
+
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-family: var(--font);
+}
+
+.summary-row span {
+  color: var(--text-muted);
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  text-transform: uppercase;
+}
+
+.summary-row strong {
+  font-weight: 600;
+  color: var(--black);
+}
+
+.summary-row strong.highlight {
+  color: var(--black);
+  background: var(--green);
+  padding: 2px 8px;
+  border-radius: 50px;
+}
+
+.btn-submit {
+  width: 100%;
+  margin-top: 32px;
+  background: var(--green);
+  color: var(--black);
+  border: 2px solid var(--black);
+  padding: 20px;
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0 var(--black);
+}
+
+.btn-submit:disabled {
+  background: #ccc;
+  border-color: #aaa;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ALERTS */
+.form-alert {
+  padding: 16px;
+  border: 2px solid var(--black);
+  border-radius: 16px;
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 24px;
+}
+
+.form-alert--error {
+  background: #ff5050;
+  color: var(--white);
+}
+
+/* MODALS */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal {
+  background: var(--white);
+  border: 2px solid var(--black);
+  border-radius: 24px;
+  padding: 48px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 8px 8px 0 var(--green);
+}
+
+.modal__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.modal__title {
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 40px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.modal__text {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.qr-pass {
+  background: var(--surface-2);
+  border: 2px solid var(--black);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.qr-pass__inner {
+  background: var(--white);
+  padding: 16px;
+  display: inline-block;
+  border: 2px solid var(--black);
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+#qrCodeImg {
+  display: block;
+}
+
+#bookingIdText {
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.modal__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal__btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--black);
+  border-radius: 50px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.modal__btn--primary {
+  background: var(--black);
+  color: var(--green);
+}
+
+.modal__btn--primary:hover {
+  background: var(--green);
+  color: var(--black);
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0 var(--black);
+}
+
+.modal__btn--secondary {
+  background: transparent;
+  color: var(--black);
+}
+
+.modal__btn--secondary:hover {
+  background: var(--surface-3);
+}

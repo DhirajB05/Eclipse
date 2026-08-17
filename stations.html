@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Stations — Eclipse</title>
+  <meta name="description" content="Find EV charging stations near you — Eclipse" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="stations.css" />
+</head>
+<body class="inner-page">
+
+  <!-- WI-FI LOADER OVERLAY -->
+  <div class="loader-overlay" id="loaderOverlay">
+    <div class="loader-content">
+      <div class="speeding-text">SEARCHING...</div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav__inner">
+      <div class="nav__left">
+        <button class="nav__btn" id="aboutBtn">ABOUT ▾</button>
+        <div class="nav__drop" id="aboutDrop">
+          <a href="index.html">Home</a>
+          <a href="stations.html">Stations</a>
+          <a href="booking.html">Booking</a>
+          <a href="bookings.html">My Bookings</a>
+        </div>
+      </div>
+
+      <a href="index.html" class="nav__logo" aria-label="Eclipse Home">
+        <svg width="148.4" height="16" viewBox="0 0 1344 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M193.189 28.5047L200.076 0H54.9142C40.7075 0 26.3636 11.7106 22.8712 26.1591L0.770964 117.638C-2.71855 132.086 5.96666 143.797 20.1705 143.797H165.333L172.22 115.292H56.7404C52.0048 115.292 49.1098 111.388 50.2729 106.572L55.2057 86.1507H179.256L186.144 57.646H62.0961L67.0289 37.2244C68.1921 32.4082 72.9734 28.5047 77.7089 28.5047H193.186H193.189Z" fill="currentColor"/>
+          <path d="M383.017 28.5047L389.904 0H244.742C230.538 0 216.195 11.7106 212.702 26.1591L190.599 117.638C187.11 132.086 195.795 143.797 209.999 143.797H355.161L362.048 115.292H246.571C241.836 115.292 238.941 111.388 240.104 106.572L256.86 37.2244C258.023 32.4082 262.804 28.5047 267.54 28.5047H383.017Z" fill="currentColor"/>
+          <path d="M431.977 106.572L457.727 0H410.897L382.475 117.638C378.986 132.086 387.671 143.797 401.875 143.797H547.037L553.924 115.292H438.447C433.712 115.292 430.817 111.388 431.98 106.572H431.977Z" fill="currentColor"/>
+          <path d="M764.962 28.5047L771.85 0H600.966L594.079 28.5047H647.53C652.266 28.5047 655.161 32.4082 653.998 37.2244L637.242 106.572C636.079 111.388 631.297 115.292 626.562 115.292H573.11L566.223 143.797H737.106L743.994 115.292H690.542C685.806 115.292 682.911 111.388 684.075 106.572L700.83 37.2244C701.994 32.4082 706.775 28.5047 711.511 28.5047H764.962Z" fill="currentColor"/>
+          <path d="M839.07 0H817.961C803.757 0 789.411 11.7106 785.921 26.1591L757.499 143.797H804.329L818.255 86.1507H916.585C930.792 86.1507 945.136 74.4401 948.628 59.9916L956.802 26.1591C960.294 11.7106 951.606 0 937.402 0H839.073H839.07ZM894.03 57.646H825.14L832.182 28.5047H901.072C905.808 28.5047 908.703 32.4082 907.54 37.2244L904.713 48.9263C903.55 53.7425 898.769 57.646 894.033 57.646H894.03Z" fill="currentColor"/>
+          <path d="M1092.49 143.797H947.327L954.215 115.292H1069.48C1074.22 115.292 1079 111.388 1080.16 106.572L1082.99 94.8704C1084.15 90.0542 1081.25 86.1507 1076.52 86.1507H986.975C972.768 86.1507 964.083 74.4401 967.576 59.9916L975.749 26.1591C979.239 11.7106 993.585 0 1007.79 0H1152.95L1146.06 28.5047H1030.58C1025.85 28.5047 1021.07 32.4082 1019.9 37.2244L1017.08 48.9263C1015.91 53.7425 1018.81 57.646 1023.54 57.646H1113.3C1127.51 57.646 1136.19 69.3565 1132.7 83.8051L1124.53 117.638C1121.04 132.086 1106.69 143.797 1092.48 143.797H1092.49Z" fill="currentColor"/>
+          <path d="M1337.11 28.5047L1344 0H1198.84C1184.63 0 1170.29 11.7106 1166.79 26.1591L1144.69 117.638C1141.2 132.086 1149.89 143.797 1164.09 143.797H1309.25L1316.14 115.292H1200.66C1195.93 115.292 1193.03 111.388 1194.2 106.572L1199.13 86.1507H1323.18L1330.07 57.646H1206.02L1210.95 37.2244C1212.11 32.4082 1216.89 28.5047 1221.63 28.5047H1337.11H1337.11Z" fill="currentColor"/>
+        </svg>
+      </a>
+
+      <div class="nav__right">
+        <a href="bookings.html" class="nav__icon-link">MY BOOKINGS</a>
+        <a href="index.html" class="btn-login">HOME</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="stations-page">
+
+    <!-- SEARCH HEADER -->
+    <section class="search-header" id="searchHeader">
+      <h1 class="search-header__title">FIND CHARGING STATIONS</h1>
+      <div class="search-header__bar">
+        <svg class="search-header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input type="text" class="search-header__input" id="searchInput" placeholder="Search by station name, city, or state..." aria-label="Search stations" />
+        <button class="search-header__btn" id="searchBtn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- FILTERS -->
+    <section class="filters" id="filtersSection">
+      <div class="filters__row">
+        <div class="filter-group">
+          <label class="filter-label" for="filterState">State</label>
+          <select class="filter-select" id="filterState">
+            <option value="">All States</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" for="filterCity">City</label>
+          <select class="filter-select" id="filterCity">
+            <option value="">All Cities</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" for="filterCharger">Charger Type</label>
+          <select class="filter-select" id="filterCharger">
+            <option value="">All Types</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" for="filterAvailable">Availability</label>
+          <select class="filter-select" id="filterAvailable">
+            <option value="">All</option>
+            <option value="true">Available Now</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" for="filterSort">Sort By</label>
+          <select class="filter-select" id="filterSort">
+            <option value="">Default</option>
+            <option value="name">Name (A-Z)</option>
+            <option value="name_desc">Name (Z-A)</option>
+            <option value="price">Price (Low-High)</option>
+            <option value="price_desc">Price (High-Low)</option>
+            <option value="power">Power (Highest)</option>
+            <option value="city">City</option>
+          </select>
+        </div>
+        <button class="filter-clear" id="clearFilters">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+          Clear
+        </button>
+      </div>
+    </section>
+
+    <!-- RESULTS HEADER -->
+    <section class="results-header" id="resultsHeader">
+      <p class="results-header__count" id="resultCount">Loading stations...</p>
+      <div class="results-header__chips" id="activeChips"></div>
+    </section>
+
+    <!-- CONTENT: CARDS -->
+    <section class="results-layout">
+      <div class="results-grid" id="resultsGrid">
+        <!-- Station cards rendered by JS -->
+      </div>
+    </section>
+
+    <!-- PAGINATION -->
+    <section class="pagination" id="pagination"></section>
+
+    <!-- EMPTY STATE -->
+    <section class="state-empty" id="emptyState" style="display:none;">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(161,254,160,0.4)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+        <path d="M8 11h6"/>
+      </svg>
+      <h2 class="state-empty__title">No stations found</h2>
+      <p class="state-empty__text">Try adjusting your search or clearing filters.</p>
+      <button class="state-empty__btn" id="emptyResetBtn">Clear all filters</button>
+    </section>
+
+    <!-- ERROR STATE -->
+    <section class="state-error" id="errorState" style="display:none;">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,100,100,0.5)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 8v4M12 16h.01"/>
+      </svg>
+      <h2 class="state-error__title">Something went wrong</h2>
+      <p class="state-error__text">We couldn't load charging stations. Try again.</p>
+      <button class="state-error__btn" id="errorRetryBtn">Retry</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+  <script src="stations.js"></script>
+</body>
+</html>
