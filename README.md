@@ -92,4 +92,5 @@ The station database is compiled and normalized from:
 
 The system architecture outlines the client layer, Express.js backend API, Kaggle and Government of India EV data sources, in-memory booking engine, and Google Maps integration.
 
-![Software Architecture Diagram](./docs/screenshots/architecture_diagram.png)
+<img width="1536" height="1024" alt="1000279893" src="https://github.com/user-attachments/assets/d1c34d6e-f021-4d03-b4c9-5972add3d9dd" />
+
