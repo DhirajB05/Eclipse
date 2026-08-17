@@ -155,65 +155,101 @@ let mapInstance;
 let mapMarker;
 
 window.initMap = function() {
+  if (typeof google === 'undefined' || !google.maps) {
+    updateMapLocation();
+    return;
+  }
   const defaultLoc = { lat: 20.5937, lng: 78.9629 }; // Center of India
-  mapInstance = new google.maps.Map(document.getElementById('actualMap'), {
-    zoom: 12,
-    center: defaultLoc,
-    mapTypeControl: false,
-    streetViewControl: false,
-    fullscreenControl: false,
-    styles: [
-      { elementType: "geometry", stylers: [{ color: "#212121" }] },
-      { elementType: "labels.icon", stylers: [{ visibility: "off" }] },
-      { elementType: "labels.text.fill", stylers: [{ color: "#757575" }] },
-      { elementType: "labels.text.stroke", stylers: [{ color: "#212121" }] },
-      { featureType: "administrative", elementType: "geometry", stylers: [{ color: "#757575" }] },
-      { featureType: "administrative.country", elementType: "labels.text.fill", stylers: [{ color: "#9e9e9e" }] },
-      { featureType: "administrative.land_parcel", stylers: [{ visibility: "off" }] },
-      { featureType: "administrative.locality", elementType: "labels.text.fill", stylers: [{ color: "#bdbdbd" }] },
-      { featureType: "poi", elementType: "labels.text.fill", stylers: [{ color: "#757575" }] },
-      { featureType: "poi.park", elementType: "geometry", stylers: [{ color: "#181818" }] },
-      { featureType: "poi.park", elementType: "labels.text.fill", stylers: [{ color: "#616161" }] },
-      { featureType: "poi.park", elementType: "labels.text.stroke", stylers: [{ color: "#1b1b1b" }] },
-      { featureType: "road", elementType: "geometry.fill", stylers: [{ color: "#2c2c2c" }] },
-      { featureType: "road", elementType: "labels.text.fill", stylers: [{ color: "#8a8a8a" }] },
-      { featureType: "road.arterial", elementType: "geometry", stylers: [{ color: "#373737" }] },
-      { featureType: "road.highway", elementType: "geometry", stylers: [{ color: "#3c3c3c" }] },
-      { featureType: "road.highway.controlled_access", elementType: "geometry", stylers: [{ color: "#4e4e4e" }] },
-      { featureType: "road.local", elementType: "labels.text.fill", stylers: [{ color: "#616161" }] },
-      { featureType: "transit", elementType: "labels.text.fill", stylers: [{ color: "#757575" }] },
-      { featureType: "water", elementType: "geometry", stylers: [{ color: "#000000" }] },
-      { featureType: "water", elementType: "labels.text.fill", stylers: [{ color: "#3d3d3d" }] }
-    ]
-  });
+  try {
+    mapInstance = new google.maps.Map(document.getElementById('actualMap'), {
+      zoom: 12,
+      center: defaultLoc,
+      mapTypeControl: false,
+      streetViewControl: false,
+      fullscreenControl: false,
+      styles: [
+        { elementType: "geometry", stylers: [{ color: "#212121" }] },
+        { elementType: "labels.icon", stylers: [{ visibility: "off" }] },
+        { elementType: "labels.text.fill", stylers: [{ color: "#757575" }] },
+        { elementType: "labels.text.stroke", stylers: [{ color: "#212121" }] },
+        { featureType: "administrative", elementType: "geometry", stylers: [{ color: "#757575" }] },
+        { featureType: "administrative.country", elementType: "labels.text.fill", stylers: [{ color: "#9e9e9e" }] },
+        { featureType: "administrative.land_parcel", stylers: [{ visibility: "off" }] },
+        { featureType: "administrative.locality", elementType: "labels.text.fill", stylers: [{ color: "#bdbdbd" }] },
+        { featureType: "poi", elementType: "labels.text.fill", stylers: [{ color: "#757575" }] },
+        { featureType: "poi.park", elementType: "geometry", stylers: [{ color: "#181818" }] },
+        { featureType: "poi.park", elementType: "labels.text.fill", stylers: [{ color: "#616161" }] },
+        { featureType: "poi.park", elementType: "labels.text.stroke", stylers: [{ color: "#1b1b1b" }] },
+        { featureType: "road", elementType: "geometry.fill", stylers: [{ color: "#2c2c2c" }] },
+        { featureType: "road", elementType: "labels.text.fill", stylers: [{ color: "#8a8a8a" }] },
+        { featureType: "road.arterial", elementType: "geometry", stylers: [{ color: "#373737" }] },
+        { featureType: "road.highway", elementType: "geometry", stylers: [{ color: "#3c3c3c" }] },
+        { featureType: "road.highway.controlled_access", elementType: "geometry", stylers: [{ color: "#4e4e4e" }] },
+        { featureType: "road.local", elementType: "labels.text.fill", stylers: [{ color: "#616161" }] },
+        { featureType: "transit", elementType: "labels.text.fill", stylers: [{ color: "#757575" }] },
+        { featureType: "water", elementType: "geometry", stylers: [{ color: "#000000" }] },
+        { featureType: "water", elementType: "labels.text.fill", stylers: [{ color: "#3d3d3d" }] }
+      ]
+    });
+  } catch (e) {
+    console.warn("Google Maps init error, falling back to OpenStreetMap", e);
+  }
 
   if (currentStation && currentStation.latitude && currentStation.longitude) {
     updateMapLocation();
   }
 };
 
+// Catch Google Maps API auth error if placeholder key is used
+window.gm_authFailure = function() {
+  console.warn("Google Maps Auth Failure - rendering fallback map");
+  updateMapLocation();
+};
+
 function updateMapLocation() {
-  if (!mapInstance || !currentStation) return;
-  const loc = { lat: currentStation.latitude, lng: currentStation.longitude };
-  mapInstance.setCenter(loc);
-  mapInstance.setZoom(15);
-  
-  if (mapMarker) {
-    mapMarker.setPosition(loc);
+  if (!currentStation || !currentStation.latitude || !currentStation.longitude) return;
+  const lat = currentStation.latitude;
+  const lng = currentStation.longitude;
+  const mapEl = document.getElementById('actualMap');
+  if (!mapEl) return;
+
+  if (typeof google !== 'undefined' && google.maps && mapInstance) {
+    const loc = { lat: lat, lng: lng };
+    mapInstance.setCenter(loc);
+    mapInstance.setZoom(15);
+    
+    if (mapMarker) {
+      mapMarker.setPosition(loc);
+    } else {
+      mapMarker = new google.maps.Marker({
+        position: loc,
+        map: mapInstance,
+        title: currentStation.name,
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          fillColor: '#A1FEA0',
+          fillOpacity: 1,
+          strokeColor: '#000',
+          strokeWeight: 2,
+          scale: 8
+        }
+      });
+    }
   } else {
-    mapMarker = new google.maps.Marker({
-      position: loc,
-      map: mapInstance,
-      title: currentStation.name,
-      icon: {
-        path: google.maps.SymbolPath.CIRCLE,
-        fillColor: '#A1FEA0',
-        fillOpacity: 1,
-        strokeColor: '#000',
-        strokeWeight: 2,
-        scale: 8
-      }
-    });
+    // Fallback dark interactive map embed
+    const bbox = `${lng - 0.008},${lat - 0.008},${lng + 0.008},${lat + 0.008}`;
+    mapEl.innerHTML = `
+      <iframe 
+        width="100%" 
+        height="100%" 
+        frameborder="0" 
+        scrolling="no" 
+        marginheight="0" 
+        marginwidth="0" 
+        src="https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lng}"
+        style="border: none; width: 100%; height: 100%; filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);">
+      </iframe>
+    `;
   }
 }
 
